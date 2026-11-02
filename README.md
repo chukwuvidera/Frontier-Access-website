@@ -31,3 +31,4 @@ In `index.html` the logo is inlined once as `<symbol id="fa-logo">` / `<symbol i
 - **Our Work**: project photos (currently illustrations marked "Project photography to come") and summaries for Climate Convergence Week, Netclan and For Creative Girls.
 - **Partners**: the marquee shows partner names as text until logo files are supplied.
 - **LinkedIn**: the footer link is `href="#"` until the company page URL is confirmed.
+- **Newsletter**: with no mailing-list service connected, Submit opens an email to info@frontieraccess.org asking to be added. To collect sign-ups automatically, set the form's `action`/`method` to your provider's form URL (see the comment above the form in `index.html`).

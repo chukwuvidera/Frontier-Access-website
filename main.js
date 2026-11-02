@@ -97,6 +97,35 @@
     });
   });
 
+  /* ---------- Newsletter ---------- */
+  const newsletter = document.querySelector('[data-newsletter]');
+  if (newsletter) {
+    const input = newsletter.querySelector('input[type="email"]');
+    const status = newsletter.querySelector('.newsletter-status');
+    const say = (msg, isError) => {
+      status.textContent = msg;
+      status.classList.toggle('is-error', !!isError);
+    };
+    newsletter.addEventListener('submit', e => {
+      const email = input.value.trim();
+      if (!email || !input.checkValidity()) {
+        e.preventDefault();
+        say('Please enter a valid email address.', true);
+        input.focus();
+        return;
+      }
+      // A mailing-list service URL in the form's action takes over from here.
+      if (newsletter.getAttribute('action')) return;
+      e.preventDefault();
+      const subject = encodeURIComponent('Newsletter subscription');
+      const body = encodeURIComponent(`Please add ${email} to the Frontier Access newsletter.`);
+      window.location.href = `mailto:info@frontieraccess.org?subject=${subject}&body=${body}`;
+      say('Thanks! Your email app will open so you can send your subscription request.');
+      newsletter.reset();
+    });
+    input.addEventListener('input', () => { if (status.classList.contains('is-error')) say(''); });
+  }
+
   /* ---------- Mobile menu ---------- */
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-mobile-menu]');
