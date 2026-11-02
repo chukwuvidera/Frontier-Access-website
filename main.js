@@ -123,6 +123,7 @@
   const header = document.querySelector('[data-header]');
   const progress = document.querySelector('.scroll-progress span');
   const steps = [...document.querySelectorAll('[data-step]')];
+  const stepCurrent = document.querySelector('[data-step-current]');
   const stepBar = document.querySelector('[data-step-bar]');
   const stepsWrap = document.querySelector('[data-steps]');
   let lastY = window.scrollY;
@@ -160,6 +161,7 @@
         if (r.top < vh * 0.6) active = i;
       });
       steps.forEach((s, i) => s.classList.toggle('is-active', i === active));
+      if (stepCurrent) stepCurrent.textContent = String(active + 1).padStart(2, '0');
       if (stepBar && stepsWrap) {
         const r = stepsWrap.getBoundingClientRect();
         const p = Math.min(1, Math.max(0, (vh * 0.6 - r.top) / r.height));
