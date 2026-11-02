@@ -74,6 +74,14 @@
     counters.forEach(c => cio.observe(c));
   } else counters.forEach(runCounter);
 
+  /* ---------- Marquee: duplicate group for seamless loop ---------- */
+  document.querySelectorAll('[data-marquee] .marquee-track').forEach(track => {
+    const group = track.querySelector('.marquee-group');
+    const clone = group.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
   /* ---------- What we do: expandable rows (hover on desktop, tap/keyboard everywhere) ---------- */
   const canHover = window.matchMedia('(hover: hover)');
   document.querySelectorAll('[data-expand]').forEach(row => {

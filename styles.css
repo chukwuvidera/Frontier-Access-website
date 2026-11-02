@@ -368,6 +368,21 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 .stat dd { margin-top: 14px; font-size: 14px; line-height: 1.45; color: #55626d; }
 .stat-accent dt { color: var(--rust); }
 
+/* ---------- Partners ---------- */
+.partners { background: var(--paper); padding: clamp(72px, 9vw, 120px) 0; overflow: hidden; }
+.marquee { margin-top: 40px; position: relative; mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-group { display: flex; flex: none; }
+.marquee-group li {
+  display: flex; align-items: center; gap: 56px; padding: 40px 28px;
+  font-family: var(--f-head); font-weight: 600; font-size: clamp(22px, 2.4vw, 34px); letter-spacing: -.02em; white-space: nowrap;
+  color: rgba(12,28,41,.38); transition: color .4s;
+}
+.marquee-group li:hover { color: var(--navy); }
+.marquee-group li::after { content: ""; width: 18px; height: 16px; background: var(--rust); opacity: .55; clip-path: polygon(0 0, 50% 50%, 0 100%, 25% 100%, 75% 50%, 25% 0, 50% 0, 100% 50%, 50% 100%, 25% 100%, 75% 50%, 25% 0); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
 /* ---------- CTA ---------- */
 .cta { position: relative; background: var(--rust); color: #fff; padding: clamp(96px, 12vw, 168px) 0; overflow: hidden; isolation: isolate; }
 .cta::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(80% 120% at 100% 0%, rgba(227,172,46,.45), transparent 60%), radial-gradient(60% 90% at 0% 100%, rgba(3,26,43,.35), transparent 60%); }
@@ -443,6 +458,8 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0s !important; }
   [data-reveal], .hero-anim { opacity: 1; transform: none; }
   .line > span, .split-word > span { transform: none; }
+  .marquee-track { animation: none; flex-wrap: wrap; width: auto; }
+  .marquee-group:nth-child(2) { display: none; }
   .statement .w { color: var(--navy-ink); }
   .hm { transform: none; opacity: 1; }
   .client-detail-inner { opacity: 1; transform: none; }
