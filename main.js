@@ -74,14 +74,6 @@
     counters.forEach(c => cio.observe(c));
   } else counters.forEach(runCounter);
 
-  /* ---------- Marquee: duplicate group for seamless loop ---------- */
-  document.querySelectorAll('[data-marquee] .marquee-track').forEach(track => {
-    const group = track.querySelector('.marquee-group');
-    const clone = group.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-  });
-
   /* ---------- What we do: expandable rows (hover on desktop, tap/keyboard everywhere) ---------- */
   const canHover = window.matchMedia('(hover: hover)');
   document.querySelectorAll('[data-expand]').forEach(row => {
@@ -131,7 +123,6 @@
   const header = document.querySelector('[data-header]');
   const progress = document.querySelector('.scroll-progress span');
   const steps = [...document.querySelectorAll('[data-step]')];
-  const stepCurrent = document.querySelector('[data-step-current]');
   const stepBar = document.querySelector('[data-step-bar]');
   const stepsWrap = document.querySelector('[data-steps]');
   let lastY = window.scrollY;
@@ -169,7 +160,6 @@
         if (r.top < vh * 0.6) active = i;
       });
       steps.forEach((s, i) => s.classList.toggle('is-active', i === active));
-      if (stepCurrent) stepCurrent.textContent = String(active + 1).padStart(2, '0');
       if (stepBar && stepsWrap) {
         const r = stepsWrap.getBoundingClientRect();
         const p = Math.min(1, Math.max(0, (vh * 0.6 - r.top) / r.height));
