@@ -82,6 +82,21 @@
     track.appendChild(clone);
   });
 
+  /* ---------- What we do: expandable rows (hover on desktop, tap/keyboard everywhere) ---------- */
+  const canHover = window.matchMedia('(hover: hover)');
+  document.querySelectorAll('[data-expand]').forEach(row => {
+    const toggleRow = () => {
+      const open = !row.classList.contains('is-open');
+      row.classList.toggle('is-open', open);
+      row.setAttribute('aria-expanded', String(open));
+    };
+    // Mouse users get hover; touch screens (no hover) tap to open and close.
+    row.addEventListener('click', () => { if (!canHover.matches) toggleRow(); });
+    row.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleRow(); }
+    });
+  });
+
   /* ---------- Mobile menu ---------- */
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-mobile-menu]');
@@ -107,7 +122,7 @@
       if (link) link.classList.add('is-active');
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'what-we-do', 'markets', 'who-we-work-with', 'contact'].forEach(id => {
+  ['about', 'what-we-do', 'contact'].forEach(id => {
     const el = document.getElementById(id);
     if (el) sectionIO.observe(el);
   });
