@@ -358,9 +358,6 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 
 .track { margin-top: clamp(80px, 10vw, 144px); padding-top: 48px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr; gap: 56px; }
 .track-head { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
-.track-head .track-intro { margin-top: 0; max-width: 60ch; font-size: 18px; }
-.track-intro { margin-top: 18px; font-size: 16px; color: #3d4b57; }
-.track-intro strong { color: var(--navy-ink); font-weight: 600; }
 .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
 .stat { padding: 4px 24px 8px; border-left: 1px solid var(--line); }
 .stat dt { font-family: var(--f-head); font-weight: 500; font-size: clamp(40px, 4.6vw, 72px); line-height: 1; letter-spacing: -.04em; color: var(--navy-ink); font-variant-numeric: tabular-nums; }
