@@ -11,6 +11,7 @@ One-page website for **Frontier Access** (frontieraccess.org), an emerging-marke
 | `index.html` | Page markup and all copy |
 | `styles.css` | Brand palette (navy `#064268`, rust `#AB4524`, gold `#E3AC2E`), layout, responsive rules, animations |
 | `main.js` | Hero contour-line canvas, scroll reveals, word-fill statement, expandable "What we do" rows, sticky "How we work" steps, counters, partner marquee, header and mobile menu |
+| `assets/work/` | Image for the Our Work project card |
 | `assets/partners/` | Partner logos used in the Partners & collaborators strip |
 | `assets/logo/` | Official logo files (PNG originals), vector SVG versions, favicon and touch icon |
 | `preview/` | Full-page desktop and mobile screenshots |
@@ -29,7 +30,7 @@ In `index.html` the logo is inlined once as `<symbol id="fa-logo">` / `<symbol i
 
 ## Placeholders to replace before launch
 
-- **Our Work**: project photos (currently illustrations marked "Project photography to come") and summaries for Climate Convergence Week, Netclan and For Creative Girls.
-- **Partners**: logos for six partners are in `assets/partners/`. LINE Academy still shows as text until its logo file is supplied.
+- **Our Work**: shows one project, Climate Convergence Week, using its logo (`assets/work/`). Add a project photo there if you want one instead.
+- **Partners**: logos for Climate Week Network, Climatebase, UBA, Olije Climate and The Net Clan are in `assets/partners/`.
 - **LinkedIn**: the footer link is `href="#"` until the company page URL is confirmed.
 - **Newsletter**: with no mailing-list service connected, Submit opens an email to info@frontieraccess.org asking to be added. To collect sign-ups automatically, set the form's `action`/`method` to your provider's form URL (see the comment above the form in `index.html`).
