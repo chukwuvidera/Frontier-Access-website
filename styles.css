@@ -365,13 +365,13 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-group { display: flex; flex: none; }
-.marquee-group li {
-  display: flex; align-items: center; gap: 56px; padding: 40px 28px;
-  font-family: var(--f-head); font-weight: 600; font-size: clamp(22px, 2.4vw, 34px); letter-spacing: -.02em; white-space: nowrap;
-  color: rgba(12,28,41,.38); transition: color .4s;
-}
-.marquee-group li:hover { color: var(--navy); }
-.marquee-group li::after { content: ""; width: 18px; height: 16px; background: var(--rust); opacity: .55; clip-path: polygon(0 0, 50% 50%, 0 100%, 25% 100%, 75% 50%, 25% 0, 50% 0, 100% 50%, 50% 100%, 25% 100%, 75% 50%, 25% 0); }
+.marquee-group li { display: flex; align-items: center; justify-content: center; padding: 30px clamp(28px, 3.6vw, 56px); }
+.partner-logo { display: block; width: auto; height: 88px; border-radius: 6px; filter: grayscale(1); opacity: .7; transition: filter .45s var(--ease), opacity .45s var(--ease), transform .45s var(--ease); }
+.partner-logo.is-wide { height: 58px; }
+.partner-logo.is-xwide { height: 40px; }
+.marquee-group li:hover .partner-logo { filter: none; opacity: 1; transform: scale(1.04); }
+.partner-text { font-family: var(--f-head); font-weight: 600; font-size: 26px; letter-spacing: -.02em; white-space: nowrap; color: rgba(12,28,41,.5); transition: color .4s; }
+.marquee-group li:hover .partner-text { color: var(--navy); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- CTA ---------- */
@@ -449,6 +449,10 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
   .hero-ctas .btn { flex: 1; justify-content: center; }
   .line > span { white-space: normal; }
   .stat { padding: 4px 16px 8px; }
+  .partner-logo { height: 64px; }
+  .partner-logo.is-wide { height: 42px; }
+  .partner-logo.is-xwide { height: 30px; }
+  .partner-text { font-size: 21px; }
 }
 
 /* Reduced motion */
