@@ -113,9 +113,6 @@ button { font: inherit; cursor: pointer; }
 .btn-nav { --bg: var(--rust); --fg: #fff; --hover-bg: var(--gold); padding: 12px 20px; font-size: 14px; }
 .btn-nav:hover { color: var(--navy-ink); }
 
-.text-link { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--navy); border-bottom: 1px solid currentColor; padding-bottom: 4px; }
-.text-link svg { width: 18px; height: 18px; transition: transform .4s var(--ease); }
-.text-link:hover svg { transform: translateX(5px); }
 
 .ulink { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .45s var(--ease); padding-bottom: 2px; }
 .ulink:hover { background-size: 100% 1px; }
@@ -402,8 +399,8 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 .newsletter-field { position: relative; display: flex; align-items: center; gap: 16px; margin-top: clamp(32px, 4vw, 52px); border-bottom: 1px solid rgba(255,255,255,.3); }
 .newsletter-field::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
 .newsletter-field:focus-within::after { transform: scaleX(1); }
-.newsletter-field input { flex: 1; min-width: 0; padding: 14px 0; background: transparent; border: 0; outline: none; color: #fff; font: 400 clamp(18px, 1.6vw, 22px) var(--f-body); }
-.newsletter-field input::placeholder { color: rgba(255,255,255,.45); }
+.newsletter-field input { flex: 1; min-width: 0; padding: 14px 0; background: transparent; border: 0; outline: none; color: #fff; font: 400 16px var(--f-body); }
+.newsletter-field input::placeholder { color: rgba(255,255,255,.45); font-size: 14px; }
 .newsletter-field button { padding: 14px 0; background: none; border: 0; color: rgba(255,255,255,.7); font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; transition: color .3s; }
 .newsletter-field button:hover, .newsletter-field button:focus-visible { color: var(--gold); }
 .newsletter-status { min-height: 1.5em; margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.7); }
