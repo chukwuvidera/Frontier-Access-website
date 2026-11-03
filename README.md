@@ -10,7 +10,7 @@ One-page website for **Frontier Access** (frontieraccess.org), an emerging-marke
 |---|---|
 | `index.html` | Page markup and all copy |
 | `styles.css` | Brand palette (navy `#064268`, rust `#AB4524`, gold `#E3AC2E`), layout, responsive rules, animations |
-| `main.js` | Hero contour-line canvas, scroll reveals, word-fill statement, expandable "What we do" rows, sticky "How we work" steps, counters, partner marquee, header and mobile menu |
+| `main.js` | Hero contour-line canvas, scroll reveals, expandable "What we do" rows, sticky "How we work" steps, counters, partner marquee, header and mobile menu |
 | `assets/work/` | Image for the Our Work project card |
 | `assets/partners/` | Partner logos used in the Partners & collaborators strip |
 | `assets/logo/` | Official logo files (PNG originals), vector SVG versions, favicon and touch icon |

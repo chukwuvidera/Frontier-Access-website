@@ -24,20 +24,6 @@
       .join(' ');
   });
 
-  /* ---------- Statement word fill ---------- */
-  const statement = document.querySelector('[data-word-fill]');
-  let statementWords = [];
-  if (statement) {
-    const highlight = /^(intelligence|capital|expertise|networks|strategic|support)/i;
-    const text = statement.textContent.trim();
-    statement.setAttribute('aria-label', text);
-    statement.innerHTML = text
-      .split(/\s+/)
-      .map(w => `<span class="w${highlight.test(w) ? ' hl' : ''}" aria-hidden="true">${w}</span>`)
-      .join(' ');
-    statementWords = [...statement.querySelectorAll('.w')];
-  }
-
   /* ---------- Reveal on scroll ---------- */
   const revealTargets = document.querySelectorAll('[data-reveal], [data-split], .footer-giant');
   if ('IntersectionObserver' in window && !reduceMotion) {
@@ -151,12 +137,12 @@
       if (link) link.classList.add('is-active');
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['about', 'what-we-do', 'contact'].forEach(id => {
+  ['top', 'what-we-do', 'contact'].forEach(id => {
     const el = document.getElementById(id);
     if (el) sectionIO.observe(el);
   });
 
-  /* ---------- Scroll-driven: header, progress, statement, steps ---------- */
+  /* ---------- Scroll-driven: header, progress, steps ---------- */
   const header = document.querySelector('[data-header]');
   const progress = document.querySelector('.scroll-progress span');
   const steps = [...document.querySelectorAll('[data-step]')];
@@ -181,14 +167,6 @@
     // Progress bar
     if (progress) progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
 
-    // Statement fill
-    if (statementWords.length) {
-      const r = statement.getBoundingClientRect();
-      const start = vh * 0.85, end = vh * 0.35;
-      const p = Math.min(1, Math.max(0, (start - r.top) / (start - end + r.height * 0.6)));
-      const count = reduceMotion ? statementWords.length : Math.round(p * statementWords.length);
-      statementWords.forEach((w, i) => w.classList.toggle('on', i < count));
-    }
 
     // Steps
     if (steps.length) {
