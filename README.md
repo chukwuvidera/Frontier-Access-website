@@ -2,7 +2,7 @@
 
 One-page website for **Frontier Access** (frontieraccess.org), a frontier-markets advisory and development firm working across Africa, Latin America and Southeast Asia.
 
-**Live preview:** https://chukwuvidera.github.io/Frontier-Access-website/
+**Live site:** https://www.frontieraccess.org (hosted on Vercel; deploys from the `main` branch)
 
 ## Files
 

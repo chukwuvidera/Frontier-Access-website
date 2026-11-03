@@ -40,6 +40,8 @@
 
   /* ---------- Counters ---------- */
   const counters = document.querySelectorAll('[data-count]');
+  // The real figures are in the HTML (for search engines and no-JS); start from 0 only when animating.
+  if (!reduceMotion && 'IntersectionObserver' in window) counters.forEach(el => (el.textContent = '0'));
   const fmt = n => n.toLocaleString('en-US');
   const runCounter = el => {
     const target = +el.dataset.count;
@@ -119,7 +121,7 @@
     body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menu.setAttribute('aria-hidden', String(!open));
+    menu.inert = !open;
   };
   toggle.addEventListener('click', () => setMenu(!body.classList.contains('menu-open')));
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));

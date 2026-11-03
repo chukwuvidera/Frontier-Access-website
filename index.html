@@ -9,11 +9,19 @@
   <link rel="icon" type="image/svg+xml" href="assets/logo/frontier-access-mark.svg" />
   <link rel="icon" type="image/png" sizes="64x64" href="assets/logo/favicon-64.png" />
   <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
-  <meta property="og:image" content="assets/logo/frontier-access-logo.png" />
+  <link rel="canonical" href="https://www.frontieraccess.org/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Frontier Access" />
+  <meta property="og:title" content="Frontier Access — Your partner across frontier markets" />
+  <meta property="og:description" content="Frontier Access is an frontier-markets advisory and development firm connecting investors, businesses, institutions and development partners to the intelligence, capital, expertise and networks needed to grow across Africa, Latin America and Southeast Asia." />
+  <meta property="og:url" content="https://www.frontieraccess.org/" />
+  <meta property="og:image" content="https://www.frontieraccess.org/assets/logo/frontier-access-logo.png" />
+  <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -56,14 +64,14 @@
 
       <a href="#contact" class="btn btn-nav"><span>Let's Talk</span><svg aria-hidden="true"><use href="#arrow" /></svg></a>
 
-      <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-menu-toggle>
         <span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu inert>
     <nav aria-label="Mobile">
       <ul>
         <li><a href="#top">About</a></li>
@@ -72,8 +80,8 @@
       </ul>
     </nav>
     <div class="mobile-menu-foot">
-      <a href="mailto:info@frontieraccess.org" class="btn btn-gold"><span>Let's Talk</span><svg aria-hidden="true"><use href="#arrow-ne" /></svg></a>
-      <p>info@frontieraccess.org<br />Lekki, Lagos</p>
+      <a href="#contact" class="btn btn-gold"><span>Let's Talk</span><svg aria-hidden="true"><use href="#arrow" /></svg></a>
+      <p>info@frontieraccess.org</p>
     </div>
   </div>
 
@@ -84,7 +92,7 @@
       <div class="hero-glow" aria-hidden="true"></div>
 
       <div class="container hero-content">
-        <h1 class="hero-title" data-split-lines>
+        <h1 class="hero-title">
           <span class="line"><span>Unlocking opportunities</span></span>
           <span class="line"><span>and advancing <em>development</em></span></span>
           <span class="line"><span>across <mark class="hero-hl">frontier markets.</mark></span></span>
@@ -247,11 +255,11 @@
             <div class="project-stats">
               <p class="list-label">Impact</p>
               <dl class="stats">
-                <div class="stat" data-reveal><dt><span data-count="1000">0</span>+</dt><dd>Climate stakeholders convened</dd></div>
-                <div class="stat" data-reveal style="--d:.06s"><dt><span data-count="150">0</span>+</dt><dd>Founders engaged</dd></div>
-                <div class="stat" data-reveal style="--d:.12s"><dt><span data-count="50">0</span>+</dt><dd>Investors engaged</dd></div>
-                <div class="stat" data-reveal style="--d:.18s"><dt><span data-count="5">0</span>+</dt><dd>Events delivered</dd></div>
-                <div class="stat stat-accent" data-reveal style="--d:.24s"><dt><span data-count="1">0</span>M+</dt><dd>Funding disbursed</dd></div>
+                <div class="stat" data-reveal><dt><span data-count="1000">1,000</span>+</dt><dd>Climate stakeholders convened</dd></div>
+                <div class="stat" data-reveal style="--d:.06s"><dt><span data-count="150">150</span>+</dt><dd>Founders engaged</dd></div>
+                <div class="stat" data-reveal style="--d:.12s"><dt><span data-count="50">50</span>+</dt><dd>Investors engaged</dd></div>
+                <div class="stat" data-reveal style="--d:.18s"><dt><span data-count="5">5</span>+</dt><dd>Events delivered</dd></div>
+                <div class="stat stat-accent" data-reveal style="--d:.24s"><dt><span data-count="1">1</span>M+</dt><dd>Funding disbursed</dd></div>
               </dl>
             </div>
           </article>
@@ -262,7 +270,7 @@
     <!-- ============ PARTNERS ============ -->
     <section class="partners" aria-labelledby="partners-title">
       <div class="container partners-head">
-        <p class="eyebrow" id="partners-title" data-reveal>Partners &amp; collaborators</p>
+        <h2 class="eyebrow" id="partners-title" data-reveal>Partners &amp; collaborators</h2>
       </div>
       <div class="marquee" data-marquee>
         <div class="marquee-track">
