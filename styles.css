@@ -321,13 +321,18 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 .project { display: flex; flex-direction: column; color: var(--ink); }
 .work-grid.is-single { grid-template-columns: 1fr; }
 .project--feature {
-  display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch;
   background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
-  transition: transform .6s var(--ease), box-shadow .6s var(--ease), border-color .6s var(--ease);
+  transition: box-shadow .6s var(--ease), border-color .6s var(--ease);
 }
-.project--feature:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -36px rgba(6,66,104,.35); border-color: rgba(171,69,36,.35); }
+.project--feature:hover { box-shadow: 0 30px 60px -36px rgba(6,66,104,.3); border-color: rgba(171,69,36,.35); }
+.project-main { display: grid; grid-template-columns: 1fr 1.15fr; align-items: stretch; }
+.project-stats { border-top: 1px solid var(--line); background: #FBF9F4; padding: clamp(28px, 3.5vw, 48px) clamp(24px, 4.5vw, 72px) clamp(32px, 4vw, 56px); }
+.project-stats .stats { margin-top: 24px; }
+.project-stats .stat:first-child { border-left: 0; padding-left: 0; }
+.project-stats .stat dt { font-size: clamp(36px, 3.8vw, 60px); }
 .project--feature .project-body { padding: clamp(32px, 4.5vw, 72px); justify-content: center; }
-.project--feature .project-link { margin-top: 0; }
+.project--feature .project-link { margin-top: 0; align-self: flex-start; }
+.project--feature .project-link:hover svg { transform: translate(3px, -3px); }
 .project--feature h3 { font-size: clamp(28px, 2.8vw, 40px); }
 .project--feature p { font-size: 16px; line-height: 1.7; max-width: 52ch; }
 
@@ -351,8 +356,6 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 .project:hover h3 { color: var(--rust); }
 .project h3 { transition: color .4s; }
 
-.track { margin-top: clamp(80px, 10vw, 144px); padding-top: 48px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr; gap: 56px; }
-.track-head { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
 .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
 .stat { padding: 4px 24px 8px; border-left: 1px solid var(--line); }
 .stat dt { font-family: var(--f-head); font-weight: 500; font-size: clamp(40px, 4.6vw, 72px); line-height: 1; letter-spacing: -.04em; color: var(--navy-ink); font-variant-numeric: tabular-nums; }
@@ -417,8 +420,8 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
   .menu-toggle { display: block; }
   .header-inner { gap: 14px; }
   .stats { grid-template-columns: repeat(3, 1fr); row-gap: 40px; }
-  .track-head { grid-template-columns: 1fr; gap: 16px; }
-}
+  .project-stats .stat:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+  }
 
 @media (max-width: 900px) {
   :root { --header-h: 72px; }
@@ -434,7 +437,7 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
   .step { min-height: 0; opacity: 1; padding: 40px 0; }
   .step .step-num { color: var(--rust); -webkit-text-stroke-color: var(--rust); }
   .work-grid { grid-template-columns: 1fr; gap: 56px; }
-  .project--feature { grid-template-columns: 1fr; }
+  .project-main { grid-template-columns: 1fr; }
   .project-media.project-media--logo { aspect-ratio: 16 / 11; min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .project--feature .project-body { padding: 28px 24px 32px; }
   .project--feature p { font-size: 16px; }
@@ -446,6 +449,8 @@ body.menu-open .mobile-menu li:nth-child(5) a { transition-delay: .44s; }
 @media (max-width: 640px) {
     .stats { grid-template-columns: repeat(2, 1fr); }
   .stat-accent { grid-column: span 2; }
+  .project-stats .stat:nth-child(3n+1) { border-left: 1px solid var(--line); padding-left: 16px; }
+  .project-stats .stat:nth-child(odd) { border-left: 0; padding-left: 0; }
   .footer-cols { grid-template-columns: 1fr 1fr; }
   .footer-cols > div:first-child { grid-column: span 2; }
   .logo-desc { display: none; }

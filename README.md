@@ -1,6 +1,6 @@
 # Frontier Access — website
 
-One-page website for **Frontier Access** (frontieraccess.org), an emerging-markets advisory and development firm working across Africa, Latin America and Southeast Asia.
+One-page website for **Frontier Access** (frontieraccess.org), a frontier-markets advisory and development firm working across Africa, Latin America and Southeast Asia.
 
 **Live preview:** https://chukwuvidera.github.io/Frontier-Access-website/
 
